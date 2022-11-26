@@ -1,0 +1,12 @@
+name: caddy-cli
+description: Caddy CLI in a github action
+inputs:
+  version:
+    description: Version of caddy to run, can be any docker-tag
+    required: true
+    default: "2.6.2-alpine"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.version }}
